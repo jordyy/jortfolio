@@ -1,13 +1,32 @@
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "react-query";
 import App from "./App";
+const queryClient = new QueryClient();
 
-require("dotenv").config();
-console.log(process.env);
+const openSource = {
+  githubConvertedToken: process.env.REACT_APP_GITHUB_TOKEN,
+  githubUserName: "jordyy",
+  githubRepo: "jortfolio",
+};
+
+const client = new ApolloClient({
+  uri: "https://api.github.com/graphql",
+  cache: new InMemoryCache(),
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${openSource.githubConvertedToken}`,
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </ApolloProvider>
   </React.StrictMode>
 );

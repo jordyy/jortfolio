@@ -1,7 +1,11 @@
-require("dotenv").config();
-console.log(process.env);
+import CommitList from "./client/components/Github/CommitList";
 
 function App() {
-  return <div className="App">Hello World</div>;
+  return (
+    <>
+      <div className="App">Hello World</div>;
+      <CommitList />
+    </>
+  );
 }
 export default App;
