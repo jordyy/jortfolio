@@ -1,113 +1,61 @@
 // import React from "react";
-// import { useQuery, gql } from "@apollo/client";
-// import { Doughnut, Pie } from "react-chartjs-2";
+// import { Doughnut } from "react-chartjs-2";
 // import { Chart, ArcElement } from "chart.js";
 // Chart.register(ArcElement);
 
-// const TASTE_APP_QUERY = gql`
-//   query {
-//     user(login: "jordyy") {
-//       repository(name: "taste-app") {
-//         languages(first: 10) {
-//           edges {
-//             node {
-//               name
-//               color
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-// const options = {
-//   legend: {
-//     display: false,
-//     position: "right",
-//   },
-//   elements: {
-//     arc: {
-//       borderWidth: 0,
-//     },
-//   },
-// };
-
-// const pieOptions = {
-//   legend: {
-//     display: false,
-//     position: "right",
-//   },
-//   elements: {
-//     arc: {
-//       borderWidth: 0,
-//     },
-//   },
-// };
-
-// const chartData = {
-//   maintainAspectRatio: false,
-//   responsive: false,
-//   labels: [],
-//   datasets: [
-//     {
-//       data: [300, 50, 100, 50],
-//       backgroundColor: "#99CCFF",
-//       hoverBackgroundColor: "#999933",
-//     },
-//   ],
-// };
-
-// const pieData = {
-//   maintainAspectRatio: false,
-//   responsive: false,
-//   labels: [{data.user.repository.languages.edges.map((language) => {language.node.name})}],
-//   datasets: [
-//     {
-//       data: [{data.user.repository.languages.edges.map((language) => {language.node.name})}],
-//       backgroundColor: [{data.user.repository.languages.edges.map((language) => {language.node.backgroundColor})}],
-//       hoverBackgroundColor: "#CCCC66",
-//     },
-//   ],
-// }
-
 // function TasteappChart() {
-//   let chartInstance = null;
-//   const { data, loading, error } = useQuery(TASTE_APP_QUERY);
-//   if (loading) return "Loading...";
-//   if (error) return <pre>{error.message}</pre>;
-
+//   const data = {
+//     labels: ["Mon", "Tue", "Wed", "Thurs", "Fri"],
+//     datasets: [
+//       {
+//         label: "Attendance for Week 1",
+//         data: [25, 24, 25, 25, 3],
+//         borderColor: ["rgba(255,206,86,0.2)"],
+//         backgroundColor: [
+//           "rgba(232,99,132,1)",
+//           "rgba(232,211,6,1)",
+//           "rgba(54,162,235,1)",
+//           "rgba(255,159,64,1)",
+//           "rgba(153,102,255,1)",
+//         ],
+//         pointBackgroundColor: "rgba(255,206,86,0.2)",
+//       },
+//     ],
+//   };
+//   const options = {
+//     plugins: {
+//       datasets: {
+//         display: true,
+//       },
+//       legend: {
+//         display: true,
+//       },
+//       labels: {
+//         display: true,
+//       },
+//       title: {
+//         display: true,
+//         text: "Doughnut Chart",
+//         color: "blue",
+//         font: {
+//           size: 34,
+//         },
+//         padding: {
+//           top: 30,
+//           bottom: 30,
+//         },
+//         responsive: true,
+//         animation: {
+//           animateScale: true,
+//         },
+//       },
+//     },
+//   };
 //   return (
-//     <div className="taste-chart">
-//       <div style={styles.relative}>
-//         <Doughnut data={chartData} options={options} />
-//         <div style={styles.pieContainer}>
-//           <Pie
-//             data={chartData}
-//             options={pieOptions}
-//             ref={(input) => {
-//               chartInstance = input;
-//             }}
-//           />
-//         </div>
-//         <div id="legend" />
-//       </div>
+//     <div>
+//       <Doughnut data={data} options={options} />
 //     </div>
 //   );
 // }
-
-// const styles = {
-//   pieContainer: {
-//     width: "40%",
-//     height: "40%",
-//     top: "50%",
-//     left: "50%",
-//     position: "absolute",
-//     transform: "translate(-50%, -50%)",
-//   },
-//   relative: {
-//     position: "relative",
-//   },
-// };
 
 // export default TasteappChart;

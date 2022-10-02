@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+import "./projects.css";
 
 const TASTE_APP_QUERY = gql`
   query {
@@ -25,17 +26,36 @@ function TasteApp() {
 
   return (
     <>
-      <div>
-        <ul>
-          {data.user.repository.languages.edges.map((language) => (
-            <li key={language.node.color}>
-              {language.node.name}
-              {language.node.name}
-              {language.node.color}
-            </li>
-          ))}
-        </ul>
+      <h1>Taste App</h1>
+      <div className="project-img-container">
+        <img
+          className="project-img"
+          src="images/tasteauth.png"
+          alt="spotify-authorization-page"
+        />
+        <img
+          className="project-img"
+          src="images/tastelogin.png"
+          alt="spotify-authorization-page"
+        />
+        <img
+          className="project-img"
+          src="images/tastetoptracks.png"
+          alt="spotify-authorization-page"
+        />
       </div>
+
+      <ul className="language-list">
+        Languages used for this project include:
+        {data.user.repository.languages.edges.map((language) => (
+          <li key={language.node.color}>{language.node.name}</li>
+        ))}
+        <a href="https://github.com/jordyy/taste-app">
+          <button className="github-button">
+            <span class="text">Link to Github</span>
+          </button>
+        </a>
+      </ul>
       <div></div>
     </>
   );

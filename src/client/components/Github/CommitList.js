@@ -1,8 +1,6 @@
 import { Octokit } from "@octokit/core";
 import React, { useEffect, useState } from "react";
-import Tasteapp from "../Projects/Tasteapp";
-import RepoList from "./RepoList";
-import TasteappChart from "../Projects/TasteappChart";
+import Projects from "../Projects/Projects";
 
 function CommitList() {
   const [commits, setCommits] = useState([]);
@@ -45,9 +43,7 @@ function CommitList() {
           </li>
         ))}
       </ul>
-      <RepoList />
-      <Tasteapp />
-      <TasteappChart />
+      <Projects />
     </>
   );
 }
