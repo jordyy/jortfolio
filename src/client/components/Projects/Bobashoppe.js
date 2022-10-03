@@ -25,7 +25,9 @@ export default function BobaShoppe() {
 
   return (
     <>
-      <h1>Boba-Shoppe</h1>
+      <div className="title-container">
+        <h1 className="project-title">Boba-Shoppe</h1>
+      </div>
       <div className="project-img-container">
         <img
           className="project-img"
@@ -56,7 +58,7 @@ export default function BobaShoppe() {
         ))}
         <a href="https://github.com/GraceShopperBoba/Boba-Shoppe">
           <button className="github-button">
-            <span class="text">Link to Github</span>
+            <span className="text">Link to Github</span>
           </button>
         </a>
       </ul>

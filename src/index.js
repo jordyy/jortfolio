@@ -1,4 +1,5 @@
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -25,7 +26,9 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
       </QueryClientProvider>
     </ApolloProvider>
   </React.StrictMode>

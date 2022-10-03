@@ -1,24 +1,17 @@
+import { Container, HStack } from "@chakra-ui/react";
 import React from "react";
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/Home">Home</Link>
-        </li>
-        <li>
-          <Link to="/Github">Github Insights</Link>
-        </li>
-        <li>
-          <Link to="/Projects">Projects</Link>
-        </li>
-        <li>
-          <Link to="/Resume">Resume</Link>
-        </li>
-      </ul>
-    </nav>
+    <Container>
+      <HStack justify={"space-around"}>
+        <Link to="/">Home</Link>
+        <Link to="/Github">Github Insights</Link>
+        <Link to="/Projects">Projects</Link>
+        <Link to="/Resume">Resume</Link>
+      </HStack>
+    </Container>
   );
 }
 

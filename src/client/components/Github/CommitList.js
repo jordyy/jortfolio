@@ -43,7 +43,6 @@ function CommitList() {
           </li>
         ))}
       </ul>
-      <Projects />
     </>
   );
 }

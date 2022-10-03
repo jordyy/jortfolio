@@ -1,11 +1,6 @@
-import CommitList from "./client/components/Github/CommitList";
+import Routing from "./client/Routing";
 
 function App() {
-  return (
-    <>
-      <div className="App">Hello World</div>;
-      <CommitList />
-    </>
-  );
+  return <Routing />;
 }
 export default App;

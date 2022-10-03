@@ -26,7 +26,9 @@ function TasteApp() {
 
   return (
     <>
-      <h1>Taste App</h1>
+      <div className="title-container">
+        <h1 className="project-title">Taste App</h1>
+      </div>
       <div className="project-img-container">
         <img
           className="project-img"
@@ -52,7 +54,7 @@ function TasteApp() {
         ))}
         <a href="https://github.com/jordyy/taste-app">
           <button className="github-button">
-            <span class="text">Link to Github</span>
+            <span className="text">Link to Github</span>
           </button>
         </a>
       </ul>
