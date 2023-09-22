@@ -5,7 +5,13 @@ export function MoneyForm() {
 
   return (
     <>
-      <form>
+      <form
+        className="moneyForm"
+        onSubmit={(event) => {
+          event.preventDefault();
+          setPersonName("lol jk");
+        }}
+      >
         <label htmlFor="person-name">
           Enter your name and I'll give you $5.
         </label>
@@ -17,11 +23,11 @@ export function MoneyForm() {
             setPersonName(event.target.value);
           }}
         />
+
+        <p>Person Name: {personName}</p>
+
+        <button>Submit</button>
       </form>
-
-      <p>Person Name: {personName}</p>
-
-      <button onClick={() => setPersonName("lol, jk.")}>Submit</button>
     </>
   );
 }
