@@ -1,4 +1,5 @@
 import React from "react";
+import UselessButton from "./UselessButton";
 
 export function MoneyForm() {
   const [personName, setPersonName] = React.useState("");
@@ -28,6 +29,7 @@ export function MoneyForm() {
 
         <button>Submit</button>
       </form>
+      <UselessButton />
     </>
   );
 }
